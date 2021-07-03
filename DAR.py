@@ -114,3 +114,9 @@ def baseline_model_text(x_train,y_train,x_test,y_test, word_index):
     cm_plot(y_test_label, predict_label).show()
     print(confusion_matrix(y_test_label, predict_label))
     return accuracy_rate
+
+if __name__ == '__main__':
+    x_train, y_train, x_test, y_test, word_index = text_prepare_newWithPadding()
+    accuracy = baseline_model_text(x_train, y_train, x_test, y_test, word_index)
+    print(accuracy)
+
