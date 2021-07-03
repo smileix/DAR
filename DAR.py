@@ -1,3 +1,5 @@
+# 需要补充导入的库
+
 # swda数据处理
 from swda import Transcript
 trans = Transcript('swda/sw00utt/sw_0001_4325.utt.csv', 
