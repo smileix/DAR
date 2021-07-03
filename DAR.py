@@ -1,4 +1,32 @@
 # 需要补充导入的库
+import os
+import matplotlib as mpl
+from keras import backend as K
+if os.environ.get('DISPLAY','') == '':
+    print('no display found. Using non-interactive Agg backend')
+    mpl.use('Agg')
+# import matplotlib.pyplot as plt
+from model_utils import *
+from data_prepare_text import *
+# from data_prepare_speech import *
+import numpy as np
+from keras.layers import *
+from keras.models import Model, Sequential
+from sklearn.metrics import f1_score, recall_score, precision_score,confusion_matrix,accuracy_score
+from keras.optimizers import RMSprop, SGD, Adam, Adadelta
+from keras.layers import Embedding
+from keras_contrib.layers.crf import CRF
+# from crf_keras import CRF
+from keras_contrib.losses import  crf_loss
+from keras_contrib.metrics import crf_viterbi_accuracy
+import gensim
+# import h5py
+# import  tensorflow as tf
+# from keras.callbacks import ModelCheckpoint, Callback
+# VECTOR_DIR = 'wiki.zh.vector.bin' # 词向量模型文件
+# w2v_model = gensim.models.KeyedVectors.load_word2vec_format(VECTOR_DIR, binary=True)
+# import scipy.io as scio
+filepath = ""
 
 # swda数据处理
 from swda import Transcript
